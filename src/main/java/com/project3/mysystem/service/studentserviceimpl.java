@@ -5,6 +5,8 @@ import com.project3.mysystem.studentrepo.studentrepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class studentserviceimpl implements studentservice{
    @Autowired
@@ -14,5 +16,10 @@ public class studentserviceimpl implements studentservice{
     @Override
     public student savestudent(student student) {
         return studentrepo.save(student);
+    }
+
+    @Override
+    public List<student> getAllstudents() {
+        return studentrepo.findAll();
     }
 }
