@@ -1,4 +1,16 @@
 package com.project3.mysystem.service;
 
-public class studentserviceimpl {
+import com.project3.mysystem.model.student;
+import com.project3.mysystem.studentrepo.studentrepo;
+import org.springframework.beans.factory.annotation.Autowired;
+
+public class studentserviceimpl implements studentservice{
+   @Autowired
+   private studentrepo studentrepo;  //   to inject student repo here
+
+
+    @Override
+    public student savestudent(student student) {
+        return studentrepo.save(student);
+    }
 }
